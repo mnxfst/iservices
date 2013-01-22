@@ -5,4 +5,47 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>iservices-core</name>
   <description>iservices core component	</description>
+  
+  <dependencies>
+
+	<!-- testing -->
+  	<dependency>
+  		<groupId>junit</groupId>
+  		<artifactId>junit</artifactId>
+  		<version>4.11</version>
+  		<scope>test</scope>
+	</dependency>
+  		
+  	<dependency>
+  		<groupId>com.typesafe.akka</groupId>
+  		<artifactId>akka-testkit_2.10</artifactId>
+  		<version>2.1.0</version>
+	</dependency>
+  
+	<!-- akka and friends -->
+	<dependency>
+  		<groupId>com.typesafe.akka</groupId>
+  		<artifactId>akka-actor_2.10</artifactId>
+  		<version>2.1.0</version>
+	</dependency>
+  		
+  	<dependency>
+  		<groupId>com.typesafe.akka</groupId>
+  		<artifactId>akka-camel_2.10</artifactId>
+  		<version>2.1.0</version>
+  	</dependency>
+  		
+  	<dependency>
+	    <groupId>org.apache.camel</groupId>
+    	<artifactId>camel-jetty</artifactId>
+    	<version>2.10.3</version>
+	</dependency>
+  		
+  	<dependency>
+	    <groupId>org.apache.camel</groupId>
+    	<artifactId>camel-restlet</artifactId>
+    	<version>2.10.3</version>
+	</dependency>
+  
+  </dependencies>
 </project>
