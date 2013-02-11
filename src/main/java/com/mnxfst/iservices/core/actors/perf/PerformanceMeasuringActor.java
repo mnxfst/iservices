@@ -21,7 +21,7 @@ public class PerformanceMeasuringActor extends UntypedActor {
 	private String outboundActorPath = null;
 	
 	/** reference to actor receiving the incoming message after it has been measured */
-	private ActorRef outboundActorRef = null;
+	protected ActorRef outboundActorRef = null;
 	
 	/** number of messages seen so far */
 	private long messageCount = 0;
@@ -62,7 +62,7 @@ public class PerformanceMeasuringActor extends UntypedActor {
 			this.totalTravelTime = this.totalTravelTime + time;			
 			this.outboundActorRef.tell(message, getSelf());
 			first = (first == 0 ? baseMessage.getCreationTimestamp() : first);
-			if(this.messageCount % 1000000 == 0) {				
+			if(this.messageCount % 1000 == 0) {				
 				last = System.currentTimeMillis();
 				System.out.println("Message count: " + messageCount + ", Time: " + time + "ms, Total traveling time: " + totalTravelTime + "ms, Average traveling time: " + ((double)totalTravelTime / (double)messageCount) + "ms, Duration: " + (last-first)+"ms");
 			}

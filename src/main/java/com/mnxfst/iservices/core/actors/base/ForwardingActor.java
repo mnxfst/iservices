@@ -23,7 +23,7 @@ public class ForwardingActor extends UntypedActor {
 	private String outboundActorPath = null;
 	
 	/** references the actor receiving incoming messages */
-	private ActorRef outboundActorRef = null;
+	protected ActorRef outboundActorRef = null;
 	
 	/**
 	 * Initializes the actor using the provided input
