@@ -1,0 +1,8 @@
+<handler id="uniqueIdentifier">
+	<class>com.mnxfst.iservices.core.actors.base.ForwardingActor</class>
+	<destination>
+		<handler>anotherHandlerIdentifier</handler>
+		<spawn>true</spawn>
+	</destination>	
+	
+</handler>
