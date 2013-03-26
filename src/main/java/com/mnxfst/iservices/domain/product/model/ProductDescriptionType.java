@@ -12,6 +12,6 @@ import java.io.Serializable;
  */
 public enum ProductDescriptionType implements Serializable {
 
-	SHORT, LONG, TEASER;
+	SHORT, LONG, TEASER, OTHER;
 	
 }
