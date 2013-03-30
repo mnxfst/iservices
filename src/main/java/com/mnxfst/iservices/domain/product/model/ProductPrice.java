@@ -7,8 +7,11 @@ import java.io.Serializable;
 
 import org.bson.types.ObjectId;
 
+import com.mnxfst.iservices.domain.vendor.model.Vendor;
+
 /**
- * Pricing details
+ * Pricing details for a specific {@link Product} being associated with a single {@link Vendor}. The application
+ * needs to ensure that there only exists one price per type and vendor.
  * @author mnxfst
  *
  */
@@ -29,7 +32,22 @@ public class ProductPrice implements Serializable {
 	private String vendorId = null;
 	
 	///////////////////////////////////////////////////////////////////////////////////
+
+	/** names the type of the current price, eg. MSRP */
+	private ProductPriceType type = null; 
 	
+	/** price */
+	private Double value = null;
+	
+	/** currency the price is expressed in */
+	private String currency = null;
+	
+	/** value added tax provided as percentage with respect to the country the product is sold from */
+	private Double vat = null;
+	
+	public ProductPrice() {		
+	}
+
 	public ObjectId getId() {
 		return id;
 	}
@@ -78,38 +96,12 @@ public class ProductPrice implements Serializable {
 		this.currency = currency;
 	}
 
-	public Double getTax() {
-		return tax;
-	}
-
-	public void setTax(Double tax) {
-		this.tax = tax;
-	}
-
 	public Double getVat() {
 		return vat;
 	}
 
 	public void setVat(Double vat) {
 		this.vat = vat;
-	}
-
-	/** names the type of the current price, eg. MSRP */
-	private ProductPriceType type = null; 
-	
-	/** price */
-	private Double value = null;
-	
-	/** currency the price is expressed in */
-	private String currency = null;
-	
-	/** additional tax to be added provided as total value */
-	private Double tax = null; 
-	
-	/** value added tax to be added provided as percentage */
-	private Double vat = null;
-	
-	public ProductPrice() {		
 	}
 
 	

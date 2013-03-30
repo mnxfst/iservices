@@ -29,6 +29,10 @@ public class Product implements Serializable {
 
 	/** information about the source the product originates from */
 	private ProductSource source = null;
+	
+	/** global trade item number: UPC, EAN, ISBN, JAN - must contain a prefix followed by a colon. EAN:3001234567892 */
+	private String gtin = null;
+	
 	///////////////////////////////////////////////////////////////////////////////////
 
 	///////////////////////////////////////////////////////////////////////////////////
@@ -54,8 +58,37 @@ public class Product implements Serializable {
 	private List<String> tags = new ArrayList<>();
 	
 	/** information about the product manufacturer */
-	private Manufacturer manufacturer = null;	
+	private Manufacturer manufacturer = null;
+	
+	/** names the gender the product is dedicated to */
+	private ProductTargetGender targetGender = ProductTargetGender.UNISEX;
+	
+	/** associates the product with an age group */
+	private ProductAgeGroup ageGroup = ProductAgeGroup.CHILDREN;
+
+	// TODO colors, size (fashion, furniture, ...)
+	
 	////////////////////////////////////////////////////////////////////////////////////
 	
+	///////////////////////////////////////////////////////////////////////////////////
+	// default pricing information
+	
+	/** default manufacturer suggested retail price */
+	private Double defaultMSRP = null;
+	
+	/** default price to be used when selling this product */
+	private Double defaultSellingPrice = null;
+	
+	/** default old selling price */
+	private Double defaultOldSellingPrice = null;
+	
+	/** default value added tax rate to be used for calculating gross price */
+	private Double defaultVAT = null;
+	
+	/** default currency used to express prices */
+	private String defaultCurrency = null;
+	///////////////////////////////////////////////////////////////////////////////////
 
+	
+	
 }
