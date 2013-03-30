@@ -18,7 +18,7 @@ public class ProductSource implements Serializable {
 	private static final long serialVersionUID = 129393839101586403L;
 	
 	/** holds the reference towards the product owner and can be used in the owner domain to lookup the party */ 
-	private String ownerId = null;
+	private String supplierId = null;
 	
 	/** holds the identifier used by the owner to reference the product */
 	private String productId = null;
@@ -26,12 +26,12 @@ public class ProductSource implements Serializable {
 	public ProductSource() {		
 	}
 
-	public String getOwnerId() {
-		return ownerId;
+	public String getSupplierId() {
+		return supplierId;
 	}
 
-	public void setOwnerId(String ownerId) {
-		this.ownerId = ownerId;
+	public void setSupplierId(String supplierId) {
+		this.supplierId = supplierId;
 	}
 
 	public String getProductId() {
